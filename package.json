@@ -7,7 +7,7 @@
   "scripts": {
     "start": "concurrently --kill-others-on-fail --success first \"npm run dev:react\" \"npm run dev:electron\"",
     "dev:react": "cd renderer && npm run dev",
-    "dev:electron": "cross-env ELECTRON_DEV=true wait-on http://localhost:5173 && electron . && kill-port 5173",
+    "dev:electron":" wait-on http://localhost:5173 && cross-env-shell ELECTRON_DEV=true electron . && kill-port 5173",
     "build": "cd renderer && npm run build && electron-builder",
     "package": "electron-forge package",
     "make": "electron-forge make",
